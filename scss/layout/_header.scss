@@ -1,0 +1,174 @@
+@import "../abstract/mixin";
+@import "../abstract/variables";
+
+.head {
+  width: 100%;
+  height: 40vh;
+  background-color: $color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: 55px;
+    @include font(700);
+    animation: gros-titre 3s ease;
+  }
+
+  @keyframes gros-titre {
+    0% {
+      clip-path: polygon(0 1%, 0 1%, 0 100%, 0% 100%);
+    }
+
+    100% {
+      clip-path: polygon(0 1%, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+  p {
+    font-weight: 600;
+  }
+}
+
+p {
+  @include font-texte(400);
+  font-style: italic;
+  line-height: 27px;
+  animation: poste 3s ease;
+}
+
+@keyframes poste {
+  0% {
+    clip-path: polygon(99% 0, 100% 0, 100% 100%, 99% 100%);
+  }
+
+  100% {
+    clip-path: polygon(99% 0, 0 0, 0 100%, 100% 100%);
+  }
+}
+
+h2 {
+  @include font(600);
+  line-height: 70px;
+  border-bottom: 3px solid $color-texte;
+}
+
+.About-me {
+  @include section-texte(auto, 10%);
+
+  h2 {
+    width: 90%;
+    text-align: right;
+    animation: titre 7s ease;
+  }
+
+  @keyframes titre {
+    0% {
+      width: 40%;
+    }
+
+    100% {
+      width: 90%;
+    }
+  }
+
+  img {
+    width: 250px;
+    border-radius: 5px;
+    height: 450px;
+  }
+
+  .About-me__description {
+    width: 30%;
+  }
+}
+
+.skills .skills__icon {
+  width: 100%;
+  background: $color;
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20%;
+
+  i {
+    font-size: 70px;
+
+    &:nth-child(1) {
+      color: red;
+    }
+    &:nth-child(2) {
+      color: blue;
+    }
+    &:nth-child(3) {
+      color: rgb(250, 162, 177);
+    }
+  }
+}
+
+.parcours {
+  @include section-texte(auto, 5%);
+
+  .parcours__texte {
+    width: 50%;
+
+    p {
+      line-height: 30px;
+    }
+  }
+}
+
+.projets {
+  width: 60%;
+  height: 120vh;
+  margin: 15px auto;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+
+  .projets__description {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+    p {
+      width: 60%;
+    }
+  }
+
+  img {
+    width: 90%;
+    height: 90%;
+  }
+}
+
+.footer {
+  width: 100%;
+  height: 25vh;
+  margin: 10% 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20%;
+  background: $color;
+
+  h2 {
+    border: none;
+  }
+
+  .footer__icon {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    i {
+      font-size: 30px;
+    }
+  }
+}

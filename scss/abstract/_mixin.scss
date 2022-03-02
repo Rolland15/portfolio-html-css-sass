@@ -1,0 +1,18 @@
+@mixin section-texte($height, $gap) {
+  width: 100%;
+  height: $height;
+  margin: 4% 0 4% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin font($bold) {
+  font-family: "Libre Baskerville", serif;
+  font-weight: $bold;
+}
+@mixin font-texte($bold) {
+  font-family: "Raleway", sans-serif;
+  font-weight: $bold;
+}
